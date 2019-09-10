@@ -13,7 +13,7 @@ var server = require('../server');
 
 chai.use(chaiHttp);
 
-suite('Functional Tests', function() {
+/*suite('Functional Tests', function() {
     
     suite('GET /api/stock-prices => stockData object', function() {
       
@@ -22,7 +22,7 @@ suite('Functional Tests', function() {
         .get('/api/stock-prices')
         .query({stock: 'goog'})
         .end(function(err, res){
-          
+          if (err) console.error(err)
           //complete this one too
           
           done();
@@ -48,3 +48,4 @@ suite('Functional Tests', function() {
     });
 
 });
+*/
