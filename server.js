@@ -16,7 +16,14 @@ app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only
 
-app.use(helmet.contentSecurityPolicy({directives: {defaultSrc: ["'self'"], scriptSrc: ["'self'"]}}))
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"], 
+    scriptSrc: ["'self'", "'unsafe-inline'", 'https://code.jquery.com'],
+    styleSrc: ["'self'", "'unsafe-inline'"],
+    imgSrc: ["'self'", 'https://hyperdev.com', 'http://glitch.com']
+  }
+}))
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
